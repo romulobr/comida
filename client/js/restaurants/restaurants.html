@@ -1,0 +1,12 @@
+<div ng-controller="RestaurantsController">
+    <div bs-panel title="Restaurants">
+        <div class="list-group" toggle="off" bubble target="mainSidebar"
+             ng-repeat="restaurant in restaurants | orderBy:name">
+            <a class="list-grou-item" href="#restaurant/{{restaurant.id}}">{{restaurant.name}}
+                <i class="fa fa-chevron-right pull-right"></i></a>
+        </div>
+        <a href="#/restaurant">
+            <button type="button" class="btn btn-primary">Novo</button>
+        </a>
+    </div>
+</div>

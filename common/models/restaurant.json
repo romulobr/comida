@@ -1,0 +1,24 @@
+{
+  "name": "restaurant",
+  "plural": "restaurants",
+  "base": "PersistedModel",
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "menu": {
+      "type": "string"
+    },
+    "defaultDeliveryFee": {
+      "type": "number"
+    },
+    "image": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
