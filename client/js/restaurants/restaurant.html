@@ -1,5 +1,6 @@
 <div ng-controller="RestaurantDetailController">
     <div bs-panel title="{{restaurant.name}}">
+        <h2>Phone Number: {{restaurant.phone}}</h2>
         <h2>Default Delivery Fee: {{restaurant.displayableDefaultDeliveryFee| currency : symbol}}</h2>
         <img ng-src="{{restaurant.image}}" width="auto" height="100px">
         <a href="{{restaurant.menu}}" target="_blank">
@@ -21,8 +22,18 @@
         <input
                 bs-form-control
                 type="text"
+                ng-model="restaurant.phone"
+                label="Phone"
+                label-class="col-xs-3 col-sm-2 col-lg-1"
+                class="col-xs-9 col-sm-10 col-lg-11"
+                placeholder="complete image url"
+                />
+
+        <input
+                bs-form-control
+                type="text"
                 ng-model="restaurant.displayableDefaultDeliveryFee"
-                label="Default Fee"
+                label="Fee"
                 label-class="col-xs-3 col-sm-2 col-lg-1"
                 class="col-xs-9 col-sm-10 col-lg-11"
                 placeholder="Default Delivery Fee"

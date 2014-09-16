@@ -1,24 +1,27 @@
 {
-  "name": "restaurant",
-  "plural": "restaurants",
-  "base": "PersistedModel",
-  "properties": {
-    "name": {
-      "type": "string",
-      "required": true
+    "name": "restaurant",
+    "plural": "restaurants",
+    "base": "PersistedModel",
+    "properties": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "phone": {
+            "type": "string"
+        },
+        "menu": {
+            "type": "string"
+        },
+        "defaultDeliveryFee": {
+            "type": "number"
+        },
+        "image": {
+            "type": "string"
+        }
     },
-    "menu": {
-      "type": "string"
-    },
-    "defaultDeliveryFee": {
-      "type": "number"
-    },
-    "image": {
-      "type": "string"
-    }
-  },
-  "validations": [],
-  "relations": {},
-  "acls": [],
-  "methods": []
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": []
 }
