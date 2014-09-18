@@ -36,12 +36,13 @@
             </tr>
             </tbody>
         </table>
-        <div ng-show="order.isEditing()">
-            <a href="{{order.restaurant.menu}}" target="_blank">
-                <button type="button" class="btn btn-primary">I want it too!</button>
-                <button type="button" class="btn">Show Menu</button>
-            </a>
-        </div>
+        <hr>
+        <a href="#/orders/{{order.id}}/orderItem/">
+            <button type="button" class="btn btn-primary">I want it too!</button>
+        </a>
+        <a href="{{order.restaurant.menu}}" target="_blank">
+            <button type="button" class="btn">Show Menu</button>
+        </a>
         <hr>
     </div>
 

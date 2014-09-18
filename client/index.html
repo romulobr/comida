@@ -1,41 +1,24 @@
 <html ng-app="comida">
 <head>
-    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css"/>
-    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css"/>
-    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css"/>
-
-
     <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
     <script src="js/lib/loopback/lb-services.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body>
-<div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar">
-    <h1 class="app-name">Who Ordered Food?</h1>
+<div>
+    <a class="list-group-item" href="#/restaurants">
+        Restaurants
+        <i class="fa fa-chevron-right pull-right"></i>
+    </a>
 
-    <div class="scrollable">
-        <div class="scrollable-content">
-            <div class="list-group" toggle="off" bubble target="mainSidebar">
-                <a class="list-group-item" href="#/restaurants">
-                    Restaurants
-                    <i class="fa fa-chevron-right pull-right"></i>
-                </a>
-
-                <a class="list-group-item" href="#/orders">
-                    Orders
-                    <i class="fa fa-chevron-right pull-right"></i>
-                </a>
-                <!-- ... -->
-            </div>
-
-        </div>
-    </div>
+    <a class="list-group-item" href="#/orders">
+        Orders
+        <i class="fa fa-chevron-right pull-right"></i>
+    </a>
 </div>
-
 <div class="app">
     <div class="app-body">
         <ng-view class="app-content"></ng-view>

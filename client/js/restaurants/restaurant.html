@@ -1,5 +1,5 @@
 <div ng-controller="RestaurantDetailController">
-    <div bs-panel title="{{restaurant.name}}">
+    <div title="{{restaurant.name}}">
         <h2>Phone Number: {{restaurant.phone}}</h2>
         <h2>Default Delivery Fee: {{restaurant.displayableDefaultDeliveryFee| currency : symbol}}</h2>
         <img ng-src="{{restaurant.image}}" width="auto" height="100px">
@@ -9,7 +9,7 @@
         <button type="button" class="btn">Edit</button>
     </div>
 
-    <div bs-panel title="Editing {{restaurant.name}}">
+    <div title="Editing {{restaurant.name}}">
         <input
                 bs-form-control
                 type="text"

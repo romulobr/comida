@@ -1,10 +1,11 @@
 (function () {
-    var app = angular.module('comida', ['ngRoute', 'lbServices', 'mobile-angular-ui']);
+    var app = angular.module('comida', ['ngRoute', 'lbServices']);
     var views = {
         restaurants: '/js/restaurants/restaurants.html',
         restaurant: '/js/restaurants/restaurant.html',
         orders: '/js/orders/orders.html',
-        order: '/js/orders/order.html'
+        order: '/js/orders/order.html',
+        orderItem: '/js/orders/orderItem.html'
     };
 
     app.config(['$routeProvider',
@@ -18,6 +19,12 @@
                 }).
                 when('/order', {
                     templateUrl: views.order
+                }).
+                when('/orders/:orderId/orderItem/:orderItemId', {
+                    templateUrl: views.orderItem
+                }).
+                when('/orders/:orderId/orderItem/', {
+                    templateUrl: views.orderItem
                 }).
                 when('/restaurants', {
                     templateUrl: views.restaurants
@@ -90,9 +97,37 @@
                     var peopleOrdering = $scope.order.orderItems.length;
                     $scope.order.individualDeliveryFee = $scope.order.deliveryFee / peopleOrdering;
                 } else {
-                    console.log('Not a valid order.');
+                    console.log('not a valid order.');
                 }
             });
+        }
+    });
+
+    app.controller('OrderItemController', function ($scope, $routeParams, $window, OrderItem) {
+
+        $scope.orderItem = {};
+        $scope.params = $routeParams;
+
+        $scope.save = function () {
+            OrderItem.upsert($scope.orderItem, function (orderItem) {
+                $scope.orderItem = orderItem;
+                $window.location.href='/index.html#/order/'+orderItem.orderId;
+            }, function (error) {
+                console.log('error saving item for the order');
+                console.log(error);
+            });
+        };
+
+        if ($routeParams.orderItemId) {
+            OrderItem.query({'filter[where][id]': $routeParams.orderItemId}, function (itemOrder) {
+                if (itemOrder.length > 0) {
+                    $scope.orderItem = itemOrder[0];
+                } else {
+                    console.log('not a valid item order.');
+                }
+            });
+        } else {
+            $scope.orderItem.orderId = $routeParams.orderId;
         }
     });
 
