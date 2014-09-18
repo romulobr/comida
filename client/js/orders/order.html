@@ -1,0 +1,26 @@
+<div ng-controller="OrderDetailController">
+    <div bs-panel title="Ordering {{order.restaurant.name}}">
+        <div class="row">
+            <div class="col-xs-3">
+                <img ng-src="{{order.restaurant.image}}" width="auto" height="50px">
+            </div>
+            <div class="col-xs-9">
+                <h1>Owned by: {{order.owner}}</h1>
+            </div>
+        </div>
+        <hr>
+        <h4>Order Delivery Fee: {{order.deliveryFee | currency}}</h4>
+
+        <h4>Individual Delivery Fee: {{order.deliveryFee | currency}}</h4>
+
+        <h4>Closes at: {{order.closingTime | date:"h:mma"}}</h4>
+
+        <h4>Estimated Time of Delivery: {{order.estimatedDeliveryTime | date:"h:mma"}}</h4>
+        <hr>
+        <a href="{{restaurant.menu}}" target="_blank">
+            <button type="button" class="btn btn-primary">Open the Menu</button>
+        </a>
+        <hr>
+    </div>
+
+</div>

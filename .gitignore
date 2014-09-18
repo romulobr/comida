@@ -34,3 +34,4 @@ node_modules
 .npmignore
 
 client/bower_components
+mongodb

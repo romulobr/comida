@@ -1,0 +1,40 @@
+{
+    "name": "order",
+    "plural": "orders",
+    "base": "PersistedModel",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true
+        },
+        "owner": {
+            "type": "string",
+            "required": true
+        },
+        "date": {
+            "type": "date",
+            "required": true
+        },
+        "deliveryFee": {
+            "type": "number",
+            "required": true
+        },
+        "closingTime": {
+            "type": "date",
+            "required": true
+        },
+        "estimatedDeliveryTime": {
+            "type": "date"
+        }
+    },
+    "validations": [],
+    "relations": {
+        "restaurant": {
+            "type": "belongsTo",
+            "model": "restaurant",
+            "foreignKey": ""
+        }
+    },
+    "acls": [],
+    "methods": []
+}

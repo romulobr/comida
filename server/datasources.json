@@ -1,6 +1,8 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "loopback-connector-mongodb",
+    "database": "comida",
+    "host": "localhost"
   }
 }
