@@ -1,40 +1,45 @@
 {
-    "name": "order",
-    "plural": "orders",
-    "base": "PersistedModel",
-    "properties": {
-        "status": {
-            "type": "string",
-            "required": true
-        },
-        "owner": {
-            "type": "string",
-            "required": true
-        },
-        "date": {
-            "type": "date",
-            "required": true
-        },
-        "deliveryFee": {
-            "type": "number",
-            "required": true
-        },
-        "closingTime": {
-            "type": "date",
-            "required": true
-        },
-        "estimatedDeliveryTime": {
-            "type": "date"
-        }
+  "name": "order",
+  "plural": "orders",
+  "base": "PersistedModel",
+  "properties": {
+    "status": {
+      "type": "string",
+      "required": true
     },
-    "validations": [],
-    "relations": {
-        "restaurant": {
-            "type": "belongsTo",
-            "model": "restaurant",
-            "foreignKey": ""
-        }
+    "owner": {
+      "type": "string",
+      "required": true
     },
-    "acls": [],
-    "methods": []
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "deliveryFee": {
+      "type": "number",
+      "required": true
+    },
+    "closingTime": {
+      "type": "date",
+      "required": true
+    },
+    "estimatedDeliveryTime": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "restaurant": {
+      "type": "belongsTo",
+      "model": "restaurant",
+      "foreignKey": ""
+    },
+    "orderItems": {
+      "type": "hasMany",
+      "model": "orderItem",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
 }

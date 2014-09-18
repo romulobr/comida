@@ -80,32 +80,15 @@
 
     app.controller('OrderDetailController', function ($scope, $routeParams, Order) {
 
-        $scope.save = function () {
-            Order.upsert($scope.order, function (restaurant) {
-                $scope.order = order;
-            }, function (error) {
-                console.log('error saving order');
-                console.log(error);
-                copyOriginalToDisplayedOrder();
-            });
-        };
-
-        $scope.cancelEditing = function () {
-            console.log('cancel clicked');
-            copyOriginalToDisplayedOrder();
-        };
-
-        var copyOriginalToDisplayedOrder = function () {
-            $scope.order = angular.copy($scope.originalOrder);
-        };
-
-        $scope.restaurant = {};
+        $scope.order = {};
         $scope.params = $routeParams;
+
         if ($routeParams.orderId) {
-            Order.query({'filter[where][id]': $routeParams.orderId, 'filter[include]': 'restaurant' }, function (order) {
+            Order.query({'filter[where][id]': $routeParams.orderId, 'filter[include]': ['restaurant', 'orderItems'] }, function (order) {
                 if (order.length > 0) {
-                    $scope.originalOrder = order[0];
-                    copyOriginalToDisplayedOrder();
+                    $scope.order = order[0];
+                    var peopleOrdering = $scope.order.orderItems.length;
+                    $scope.order.individualDeliveryFee = $scope.order.deliveryFee / peopleOrdering;
                 } else {
                     console.log('Not a valid order.');
                 }

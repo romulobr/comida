@@ -1,0 +1,28 @@
+{
+  "name": "orderItem",
+  "plural": "orderItems",
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "owner": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

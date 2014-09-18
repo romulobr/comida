@@ -14,12 +14,34 @@
         <h4>Individual Delivery Fee: {{order.deliveryFee | currency}}</h4>
 
         <h4>Closes at: {{order.closingTime | date:"h:mma"}}</h4>
-
         <h4>Estimated Time of Delivery: {{order.estimatedDeliveryTime | date:"h:mma"}}</h4>
         <hr>
-        <a href="{{restaurant.menu}}" target="_blank">
-            <button type="button" class="btn btn-primary">Open the Menu</button>
-        </a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="col-xs-3">Owner</th>
+                <th class="col-xs-3">Order</th>
+                <th class="col-xs-2">Price</th>
+                <th class="col-xs-1">Fee</th>
+                <th class="col-xs-1">Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in order.orderItems">
+                <td>{{item.owner}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.price | currency}}</td>
+                <td>{{order.individualDeliveryFee | currency}}</td>
+                <td>{{item.price + order.individualDeliveryFee | currency}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div ng-show="order.isEditing()">
+            <a href="{{order.restaurant.menu}}" target="_blank">
+                <button type="button" class="btn btn-primary">I want it too!</button>
+                <button type="button" class="btn">Show Menu</button>
+            </a>
+        </div>
         <hr>
     </div>
 
