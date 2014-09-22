@@ -15,6 +15,7 @@
   "dependencies": {
     "angular-resource": "~1.2.24",
     "angular-route": "~1.2.24",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "angular-material": "~0.0.3"
   }
 }

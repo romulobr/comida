@@ -1,0 +1,24 @@
+<!--<div ng-controller="EditOrderController">-->
+</div>
+<form style="padding-left: 20px;">
+    <material-input-group fid="owner" class="material-input-group-theme-dark">
+        <label for="owner">Name</label>
+        <material-input id="owner" type="text" ng-model="restaurant.name">
+    </material-input-group>
+
+    <material-input-group fid="restaurant" class="material-input-group-theme-dark">
+        <label for="restaurant">Phone Number</label>
+        <material-input id="restaurant" type="text" ng-model="restaurant.phone">
+    </material-input-group>
+
+    <material-input-group fid="deliveryFee" class="material-input-group-theme-dark">
+        <label for="deliveryFee">Delivery Fee</label>
+        <material-input id="deliveryFee" type="text" ng-model="restaurant.displayableDefaultDeliveryFee">
+    </material-input-group>
+
+</form>
+<material-button class="material-theme-light" ng-click="save()">Save</material-button>
+<a href="#restaurant/{{restaurant.id}}">
+    <material-button class="material-theme-dark">Cancel</material-button>
+</a>
+</div>

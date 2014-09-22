@@ -1,11 +1,21 @@
 <div ng-controller="OrdersController">
-    <div bs-panel title="Orders">
-        <div class="list-group" toggle="off" bubble target="mainSidebar" ng-repeat="order in orders">
-            <a class="list-grou-item" href="#order/{{order.id}}">{{order.restaurant.name}} - {{order.owner}}
-                <i class="fa fa-chevron-right pull-right"></i></a>
+    <material-card>
+        <div layout="vertical">
+            <material-list ng-repeat="order in orders">
+                <a class="list-group-item" href="#order/{{order.id}}">
+                    <material-item-content>
+                        {{order.restaurant.name}} - {{order.owner}}
+                    </material-item-content>
+                </a>
+                <material-divider ng-if="!$last"></material-divider>
+            </material-list>
         </div>
+    </material-card>
+    <div layout="horizontal" layout-padding style="width:100%">
         <a href="#/order">
-            <button type="button" class="btn btn-primary">Novo</button>
+            <material-button class="material-theme-light">
+                <button class="material-button-inner">New Order</button>
+            </material-button>
         </a>
     </div>
 </div>

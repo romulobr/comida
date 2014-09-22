@@ -1,27 +1,41 @@
 <html ng-app="comida">
 <head>
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+
     <script src="js/lib/loopback/lb-services.js"></script>
+
+    <script src="js/restaurants/restaurants.js"></script>
+    <script src="js/orders/orders.js"></script>
     <script src="js/app.js"></script>
+
 </head>
 <body>
 <div>
-    <a class="list-group-item" href="#/restaurants">
-        Restaurants
-        <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-
-    <a class="list-group-item" href="#/orders">
-        Orders
-        <i class="fa fa-chevron-right pull-right"></i>
-    </a>
+    <material-content>
+        <material-toolbar class="material-theme-dark">
+            <h1 class="material-toolbar-tools">
+                <a class="list-group-item" href="#/orders"><span>Let's order some food</span></a>
+            </h1>
+        </material-toolbar>
+    </material-content>
 </div>
 <div class="app">
     <div class="app-body">
-        <ng-view class="app-content"></ng-view>
+        <material-content>
+            <material-card>
+                <ng-view class="app-content"></ng-view>
+            </material-card>
+        </material-content>
     </div>
 </div>
 </body>

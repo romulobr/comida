@@ -1,62 +1,33 @@
-<div ng-controller="RestaurantDetailController">
-    <div title="{{restaurant.name}}">
-        <h2>Phone Number: {{restaurant.phone}}</h2>
-        <h2>Default Delivery Fee: {{restaurant.displayableDefaultDeliveryFee| currency : symbol}}</h2>
-        <img ng-src="{{restaurant.image}}" width="auto" height="100px">
-        <a href="{{restaurant.menu}}" target="_blank">
-            <button type="button" class="btn btn-primary">Open the Menu</button>
-        </a>
-        <button type="button" class="btn">Edit</button>
-    </div>
+<div ng-controller="RestaurantDetailController" layout="vertical">
+    <h1>{{restaurant.name}}</h1>
 
-    <div title="Editing {{restaurant.name}}">
-        <input
-                bs-form-control
-                type="text"
-                ng-model="restaurant.name"
-                label="Name"
-                label-class="col-xs-3 col-sm-2 col-lg-1"
-                class="col-xs-9 col-sm-10 col-lg-11"
-                placeholder="Name"
-                />
-        <input
-                bs-form-control
-                type="text"
-                ng-model="restaurant.phone"
-                label="Phone"
-                label-class="col-xs-3 col-sm-2 col-lg-1"
-                class="col-xs-9 col-sm-10 col-lg-11"
-                placeholder="complete image url"
-                />
+    <img ng-src="{{restaurant.image}}" width="100px" height="100px">
 
-        <input
-                bs-form-control
-                type="text"
-                ng-model="restaurant.displayableDefaultDeliveryFee"
-                label="Fee"
-                label-class="col-xs-3 col-sm-2 col-lg-1"
-                class="col-xs-9 col-sm-10 col-lg-11"
-                placeholder="Default Delivery Fee"
-                />
-        <input
-                bs-form-control
-                type="text"
-                ng-model="restaurant.menu"
-                label="Menu"
-                label-class="col-xs-3 col-sm-2 col-lg-1"
-                class="col-xs-9 col-sm-10 col-lg-11"
-                placeholder="complete menu url"
-                />
-        <input
-                bs-form-control
-                type="text"
-                ng-model="restaurant.image"
-                label="Image"
-                label-class="col-xs-3 col-sm-2 col-lg-1"
-                class="col-xs-9 col-sm-10 col-lg-11"
-                placeholder="complete image url"
-                />
-        <button type="button" class="btn btn-primary" ng-click="save()">Save</button>
-        <button type="button" class="btn" ng-click="cancelEditing()">Cancel</button>
-    </div>
+    <h2>Phone Number: {{restaurant.phone}}</h2>
+
+    <h2>Default Delivery Fee: {{restaurant.displayableDefaultDeliveryFee| currency : symbol}}</h2>
+    <material-toolbar class="material-theme-dark">
+        <div layout="horizontal" layout-padding>
+            <div flex>
+                <div>
+                    <a href="{{restaurant.menu}}" target="_blank">
+                        <material-button class="material-theme-light" style="width:100%">
+                            <button class="material-button-inner">Menu</button>
+                        </material-button>
+                    </a>
+                </div>
+            </div flex>
+
+            <div flex>
+                <div>
+                    <a href="#restaurant/edit/{{restaurant.id}}">
+                        <material-button class="material-theme-light" style="width:100%">
+                            <button class="material-button-inner">Edit</button>
+                        </material-button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </material-toolbar>
 </div>
