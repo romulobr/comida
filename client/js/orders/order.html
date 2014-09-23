@@ -1,21 +1,32 @@
 <div ng-controller="OrderDetailController">
-    <div bs-panel title="Ordering {{order.restaurant.name}}">
-        <div class="row">
-            <div class="col-xs-3">
+    <p class="material-whiteframe-z1">
+        <strong>{{order.owner}}</strong> is ordering from <strong>{{order.restaurant.name}}</strong>
+    </p>
+    <material-card>
+        <div layout="horizontal" layout-padding>
+            <div flex="20">
                 <img ng-src="{{order.restaurant.image}}" width="auto" height="50px">
             </div>
-            <div class="col-xs-9">
-                <h1>Owned by: {{order.owner}}</h1>
+            <div flex="20">
+                Order Delivery Fee:<br>
+                <strong>{{order.displayableDeliveryFee | currency}}</strong>
+            </div>
+            <div flex="20">
+                Individual Delivery Fee:<br>
+                <strong>{{order.displayableIndividualDeliveryFee | currency}}</strong>
+            </div>
+            <div flex="20">
+                Closes at:<br>
+                <strong>{{order.closingTime | date:"h:mma"}}</strong>
+            </div>
+            <div flex="20">
+                Estimated Time of Delivery:<br>
+                <strong>{{order.estimatedDeliveryTime | date:"h:mma"}}</strong>
             </div>
         </div>
-        <hr>
-        <h4>Order Delivery Fee: {{order.deliveryFee | currency}}</h4>
+    </material-card>
 
-        <h4>Individual Delivery Fee: {{order.deliveryFee | currency}}</h4>
-
-        <h4>Closes at: {{order.closingTime | date:"h:mma"}}</h4>
-        <h4>Estimated Time of Delivery: {{order.estimatedDeliveryTime | date:"h:mma"}}</h4>
-        <hr>
+    <material-card>
         <table class="table">
             <thead>
             <tr>
@@ -31,19 +42,26 @@
                 <td>{{item.owner}}</td>
                 <td>{{item.description}}</td>
                 <td>{{item.price | currency}}</td>
-                <td>{{order.individualDeliveryFee | currency}}</td>
-                <td>{{item.price + order.individualDeliveryFee | currency}}</td>
+                <td>{{order.displayableIndividualDeliveryFee | currency}}</td>
+                <td>{{item.price + order.displayableIndividualDeliveryFee | currency}}</td>
             </tr>
             </tbody>
         </table>
-        <hr>
-        <a href="#/orders/{{order.id}}/orderItem/">
-            <material-button>I want it too!</material-button>
-        </a>
-        <a href="{{order.restaurant.menu}}" target="_blank">
-            <material-button> Show Menu</material-button>
-        </a>
-        <hr>
+    </material-card>
+    <div layout="horizontal" layout-padding>
+        <div flex="50">
+            <a href="#/orders/{{order.id}}/orderItem/">
+                <material-button class="material-theme-light" style="width:100%">
+                    <button class="material-button-inner">I want it too!</button>
+                </material-button>
+            </a>
+        </div>
+        <div flex="50">
+            <a href="{{order.restaurant.menu}}" target="_blank" >
+                <material-button class="material-theme-light" style="width:100%">
+                    <button class="material-button-inner">Show me the Menu</button>
+                </material-button>
+            </a>
+        </div>
     </div>
-
 </div>

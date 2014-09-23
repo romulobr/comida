@@ -30,11 +30,22 @@
                     placeholder="How Much"
                     />
 
-
-            <button type="button" class="btn btn-primary" ng-click="save()">Save</button>
-            <a href="#/order/{{orderItem.orderId}}">
-                <button type="button" class="btn">Cancel</button>
-            </a>
+            <div layout="horizontal" layout-padding>
+                <div flex="50">
+                    <a href="#/orders/{{order.id}}/orderItem/">
+                        <material-button class="material-theme-light" style="width:100%">
+                            <button ng-click="save()" class="material-button-inner">Save</button>
+                        </material-button>
+                    </a>
+                </div>
+                <div flex="50">
+                    <a href="#/order/{{orderItem.orderId}}">
+                        <material-button class="material-theme-light" style="width:100%">
+                            <button class="material-button-inner">Cancel</button>
+                        </material-button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

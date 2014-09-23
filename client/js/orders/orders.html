@@ -1,18 +1,48 @@
 <div ng-controller="OrdersController">
+    <h1 class="material-whiteframe-z1">Today's Orders</h1>
     <material-card>
-        <div layout="vertical">
-            <material-list ng-repeat="order in orders">
-                <a class="list-group-item" href="#order/{{order.id}}">
-                    <material-item-content>
-                        {{order.restaurant.name}} - {{order.owner}}
-                    </material-item-content>
-                </a>
-                <material-divider ng-if="!$last"></material-divider>
-            </material-list>
-        </div>
+        <table>
+            <tr class="material-whiteframe-z1">
+                <td>
+                    Restaurant
+                </td>
+                <td>
+                    Owner
+                </td>
+                <td>
+                    Closing Time
+                </td>
+                <td>
+                    Delivery Time
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="order in orders">
+                <td>
+                    {{order.restaurant.name}}
+                </td>
+                <td>
+                    {{order.owner}}
+                </td>
+                <td>
+                    {{order.closingTime | date:'h:mma'}}
+                </td>
+                <td>
+                    {{order.estimatedDeliveryTime| date:'h:mma'}}
+                </td>
+                <td>
+                    <a class="list-group-item" href="#order/{{order.id}}">
+                        Show me
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
     </material-card>
     <div layout="horizontal" layout-padding style="width:100%">
-        <a href="#/order">
+        <a href="#/orders/new">
             <material-button class="material-theme-light">
                 <button class="material-button-inner">New Order</button>
             </material-button>

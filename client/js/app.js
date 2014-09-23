@@ -6,7 +6,9 @@
         editRestaurant: '/js/restaurants/editRestaurant.html',
         orders: '/js/orders/orders.html',
         order: '/js/orders/order.html',
-        orderItem: '/js/orders/orderItem.html'
+        orderItem: '/js/orders/orderItem.html',
+        editOrder: '/js/orders/editOrder.html',
+        newOrder: '/js/orders/newOrder.html'
     };
 
     app.config(['$routeProvider',
@@ -18,6 +20,9 @@
                 when('/order/:orderId', {
                     templateUrl: views.order
                 }).
+                when('/orders/new', {
+                    templateUrl: views.newOrder
+                }).
                 when('/order', {
                     templateUrl: views.order
                 }).
@@ -26,6 +31,9 @@
                 }).
                 when('/orders/:orderId/orderItem/', {
                     templateUrl: views.orderItem
+                }).
+                when('/order/edit/:orderId', {
+                    templateUrl: views.editOrder
                 }).
                 when('/restaurants', {
                     templateUrl: views.restaurants
