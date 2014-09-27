@@ -1,0 +1,27 @@
+<material-dialog aria-label="Bluth's Original Frozen Banana Stand">
+    <div class="dialog-content" style="width:500px">
+        <material-toolbar class="material-theme-orange material-medium-tall">
+            <div class="material-toolbar-tools material-toolbar-tools-top">
+                <material-icon style="width: 24px; height: 24px;">
+                    <svg-icon></svg-icon>
+                </material-icon>
+            </div>
+            <span flex></span>
+
+            <h2 class="material-toolbar-tools material-toolbar-tools-bottom">
+                <span>Are you sure you want to do that?</span>
+            </h2>
+        </material-toolbar>
+
+        <p>Something will be deleted forever!</p>
+    </div>
+
+    <div class="dialog-actions" layout="horizontal" layout-align="end">
+        <material-button class="material-theme-red" style="margin:10px" ng-click="confirm()">
+            <button class="material-button-inner">Delete it!</button>
+        </material-button>
+        <material-button class="material-theme-dark" style="margin:10px" ng-click="close()">
+            <button class="material-button-inner">Cancel</button>
+        </material-button>
+    </div>
+</material-dialog>
