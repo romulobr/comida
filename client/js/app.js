@@ -4,6 +4,7 @@
         restaurants: '/js/restaurants/restaurants.html',
         restaurant: '/js/restaurants/restaurant.html',
         editRestaurant: '/js/restaurants/editRestaurant.html',
+        newRestaurant: '/js/restaurants/newRestaurant.html',
         orders: '/js/orders/orders.html',
         order: '/js/orders/order.html',
         orderItem: '/js/orders/orderItem.html',
@@ -37,6 +38,9 @@
                 }).
                 when('/restaurants', {
                     templateUrl: views.restaurants
+                }).
+                when('/restaurants/new', {
+                    templateUrl: views.newRestaurant
                 }).
                 when('/restaurant/:restaurantId', {
                     templateUrl: views.restaurant

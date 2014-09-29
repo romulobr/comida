@@ -1,0 +1,52 @@
+<div ng-controller="EditRestaurantController">
+    <form style="padding-left: 20px;">
+        <material-input-group fid="name" class="material-input-group-theme-dark">
+            <label for="name">Name</label>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="name"
+                    type="text"
+                    ng-model="restaurant.name">
+        </material-input-group>
+
+        <material-input-group fid="phone-number" class="material-input-group-theme-dark">
+            <label for="phone-number">Phone Number</label>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="phone-number"
+                    type="text"
+                    ng-model="restaurant.phone">
+        </material-input-group>
+
+        <material-input-group fid="deliveryFee" class="material-input-group-theme-dark">
+            <label for="deliveryFee">Default Delivery Fee</label>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="deliveryFee" type="text"
+                    ng-model="restaurant.displayableDefaultDeliveryFee">
+        </material-input-group>
+
+        <material-input-group fid="phone-number" class="material-input-group-theme-dark">
+            <label for="phone-number">Menu url</label>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="phone-number"
+                    type="text"
+                    ng-model="restaurant.menu">
+        </material-input-group>
+
+        <material-input-group fid="deliveryFee" class="material-input-group-theme-dark">
+            <label for="deliveryFee">Image url</label>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="deliveryFee"
+                    type="text"
+                    ng-model="restaurant.image">
+        </material-input-group>
+
+    </form>
+    <material-button class="material-theme-light" ng-click="save()">Save</material-button>
+    <a href="#restaurant/{{restaurant.id}}">
+        <material-button class="material-theme-dark">Cancel</material-button>
+    </a>
+</div>

@@ -5,25 +5,31 @@
     <form style="padding-left: 20px;">
 
         <label for="name">Restaurant</label>
-        <select id="name" ng-required="true" ng-model="order.restaurantId"
+        <select
+                style="font-size:2em;width:100%"
+                id="name" ng-required="true" ng-model="order.restaurantId"
                 ng-options="restaurant.id as restaurant.name for restaurant in restaurants">
         </select>
 
         <material-input-group fid="deliveryFee" class="material-input-group-theme-dark">
             <label for="owner">Owner</label>
-            <material-input id="owner" type="text" ng-model="order.owner"></material-input>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="owner" type="text" ng-model="order.owner"></material-input>
         </material-input-group>
 
         <material-input-group fid="deliveryFee" class="material-input-group-theme-dark">
             <label for="deliveryFee">Delivery Fee</label>
-            <material-input id="deliveryFee" type="text" ng-model="order.displayableDeliveryFee"></material-input>
+            <material-input
+                    style="font-size:2em;width:100%"
+                    id="deliveryFee" type="text" ng-model="order.displayableDeliveryFee"></material-input>
         </material-input-group>
 
         <label for="closing-time">Closing Time</label>
-        <input ng-model="order.closingTime" type="time" id="closing-time">
+        <input style="font-size:2em;width:100%" ng-model="order.closingTime" type="time" id="closing-time">
 
         <label for="delivery-time">Estimated Delivery Time</label>
-        <input ng-model="order.estimatedDeliveryTime" type="time" id="delivery-time">
+        <input style="font-size:2em;width:100%" ng-model="order.estimatedDeliveryTime" type="time" id="delivery-time">
     </form>
         </material-card>
     <material-button class="material-theme-light" ng-click="save()">Save</material-button>
