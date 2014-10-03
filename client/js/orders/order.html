@@ -4,23 +4,31 @@
     </p>
     <material-card>
         <div layout="horizontal" layout-padding>
-            <div flex="20">
+            <div flex="10">
                 <img ng-src="{{order.restaurant.image}}" width="auto" height="50px">
+            </div>
+            <div flex="15">
+                Order Total:<br>
+                <strong> {{order.total | currency}}</strong>
+            </div>
+            <div flex="15">
+                Number of People:<br>
+                <strong> {{order.orderItems.length}}</strong>
             </div>
             <div flex="20">
                 Order Delivery Fee:<br>
                 <strong>{{order.displayableDeliveryFee | currency}}</strong>
             </div>
-            <div flex="20">
-                Individual Delivery Fee:<br>
+            <div flex="10">
+                Individual Fee:<br>
                 <strong>{{order.displayableIndividualDeliveryFee | currency}}</strong>
             </div>
-            <div flex="20">
+            <div flex="15">
                 Closes at:<br>
                 <strong>{{order.closingTime | date:"h:mma"}}</strong>
             </div>
-            <div flex="20">
-                Estimated Time of Delivery:<br>
+            <div flex="15">
+                Time of Delivery:<br>
                 <strong>{{order.estimatedDeliveryTime | date:"h:mma"}}</strong>
             </div>
         </div>

@@ -10,7 +10,7 @@ orders.controller('OrdersController', function ($scope, $interval, Order) {
             return moment().isBefore(moment(order.closingTime));
         },
         progress = function (start, end) {
-                var minimumTime = end.diff(start),
+            var minimumTime = end.diff(start),
                 elapsedTime = end.diff(moment());
             return((minimumTime - elapsedTime) / minimumTime * 100);
         };
@@ -77,6 +77,9 @@ orders.controller('OrderDetailController', function ($scope, $routeParams, $mate
                 $scope.order.displayableDeliveryFee = $scope.order.deliveryFee / 100;
                 $scope.order.individualDeliveryFee = $scope.order.deliveryFee / peopleOrdering;
                 $scope.order.displayableIndividualDeliveryFee = $scope.order.deliveryFee / peopleOrdering / 100;
+                $scope.order.total = _.reduce(_.pluck(order[0].orderItems, 'price'), function (memo, num) {
+                    return memo + num;
+                }, order[0].deliveryFee/100);
             } else {
                 console.log('not a valid order.');
             }
@@ -84,6 +87,7 @@ orders.controller('OrderDetailController', function ($scope, $routeParams, $mate
     };
 
     $scope.order = {};
+    $scope.order.total = 0;
     $scope.params = $routeParams;
 
     $scope.dialog = function (e, orderItem) {
