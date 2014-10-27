@@ -24,12 +24,12 @@
                 <strong>{{order.displayableIndividualDeliveryFee | currency}}</strong>
             </div>
             <div flex="15">
-                Closes at:<br>
-                <strong>{{order.closingTime | date:"h:mma"}}</strong>
+                Closes on:<br>
+                <strong>{{order.closingTime | date:"MMM d, y h:mma"}}</strong>
             </div>
             <div flex="15">
-                Time of Delivery:<br>
-                <strong>{{order.estimatedDeliveryTime | date:"h:mma"}}</strong>
+                Delivers on:<br>
+                <strong>{{order.estimatedDeliveryTime | date:"MMM d, y h:mma"}}</strong>
             </div>
         </div>
     </material-card>

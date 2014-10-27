@@ -29,12 +29,12 @@
                     {{order.owner}}
                 </td>
                 <td>
-                    {{order.closingTime | date:'h:mma'}}
+                    {{order.closingTime | date:'MMM d, y h:mma'}}
                     <br>
                     <material-linear-progress mode="determinate" ng-value="order.closingProgress"></material-linear-progress>
                 </td>
                 <td>
-                    {{order.estimatedDeliveryTime| date:'h:mma'}}
+                    {{order.estimatedDeliveryTime| date:'MMM d, y h:mma'}}
                     <br>
                     <material-linear-progress mode="determinate" ng-value="order.deliveryProgress"></material-linear-progress>
                 </td>
@@ -85,10 +85,10 @@
                     {{order.owner}}
                 </td>
                 <td>
-                    {{order.closingTime | date:'h:mma'}}
+                    {{order.closingTime | date:'MMM d, y h:mma'}}
                 </td>
                 <td>
-                    {{order.estimatedDeliveryTime| date:'h:mma'}}
+                    {{order.estimatedDeliveryTime| date:'MMM d, y h:mma'}}
                 </td>
                 <td>
                     <a href="#order/{{order.id}}">
