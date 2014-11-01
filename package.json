@@ -16,7 +16,8 @@
     "loopback-connector-mongodb": "^1.4.4",
     "loopback-datasource-juggler": "^2.7.0",
     "loopback-passport": "^1.0.2",
-    "serve-favicon": "^2.0.1"
+    "serve-favicon": "^2.0.1",
+    "gulp": "^3.8.9"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"
