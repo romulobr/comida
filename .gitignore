@@ -35,3 +35,8 @@ node_modules
 
 client/bower_components
 mongodb
+mongod.lock
+local.0
+local.ns
+journal/
+tmp
