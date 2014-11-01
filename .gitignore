@@ -40,3 +40,6 @@ local.0
 local.ns
 journal/
 tmp
+
+server/datasources.production.json
+server/datasources.local.json

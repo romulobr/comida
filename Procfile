@@ -1,1 +1,1 @@
-web: slc run
+web: gulp config && slc run
