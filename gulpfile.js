@@ -48,5 +48,3 @@ gulp.task('configProduction', function (cb) {
   };
   fs.writeFile('./server/datasources.production.json', JSON.stringify(productionDatabaseConfiguration));
 });
-
-gulp.src(['./client/bower.json']).pipe(install());

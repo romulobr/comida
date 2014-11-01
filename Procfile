@@ -1,1 +1,1 @@
-web: node node_modules/.bin/gulp && node node_modules/.bin/gulp configProduction && slc run
+web: node node_modules/.bin/gulp configProduction && slc run

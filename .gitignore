@@ -33,7 +33,6 @@ node_modules
 .jshintrc
 .npmignore
 
-client/bower_components
 mongodb
 mongod.lock
 local.0
