@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     exec = require('child_process').exec,
     fs = require('fs');
+    var install = require("gulp-install");
 
 gulp.task('default', function() {
   // place code for your default task here
@@ -45,6 +46,7 @@ gulp.task('configProduction', function (cb) {
       url:process.env.DBURL
     }
   };
-
   fs.writeFile('./server/datasources.production.json', JSON.stringify(productionDatabaseConfiguration));
 });
+
+gulp.src(['./client/bower.json']).pipe(install());
