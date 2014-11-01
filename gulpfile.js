@@ -8,7 +8,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('serve', function (cb) {
-  exec('export NODE_ENV=production', function (err, stdout, stderr) {
+  exec('export NODE_ENV=local', function (err, stdout, stderr) {
 
   });
   exec('mongod --dbpath ./mongodb', function (err, stdout, stderr) {
@@ -47,4 +47,7 @@ gulp.task('configProduction', function (cb) {
     }
   };
   fs.writeFile('./server/datasources.production.json', JSON.stringify(productionDatabaseConfiguration));
+
+  var newRelicConfigFile = "exports.config = {app_name : ['comida-app'],license_key :'" +process.env.NEW_RELIC_LICENSE_KEY+"',logging : { level : 'info' }};"
+  fs.writeFile('./newRelic.js', newRelicConfigFile);
 });
