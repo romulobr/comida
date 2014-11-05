@@ -4,37 +4,27 @@
 ###Backend: Express - Strong Loop - MongoDb
 ###Frontend: Angular - Angular Material Design
 
-#project set-up:
+##project set-up:
 
-in ./ folder
+in ./
 ```
 npm install
 ```
-in ./client folder 
+in ./client
 
 ```
 bower install
 ```
 
-Make sure mongoDb is installed,
-on a mac (using homebrew)
-```
-brew install 
-```
+Make sure mongoDb is installed
+http://www.mongodb.org/
 
-on linux (using apt-get)
-```
-apt-get install mongodb
-```
-on windows
-```
-I really don't know, but it shouldn't be too hard.
-```
+##running the app:
 
-#To run the app
-
+Gulp will make your life easier
+https://www.npmjs.org/package/gulp-install
 ```
 gulp serve
 ```
 
-Have fun!
+##Have fun!
