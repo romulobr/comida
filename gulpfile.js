@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     exec = require('child_process').exec,
+    run = require('gulp-run'),
     fs = require('fs');
     var install = require("gulp-install");
 
@@ -8,34 +9,14 @@ gulp.task('default', function() {
 });
 
 gulp.task('serve', function (cb) {
-  exec('export NODE_ENV=local', function (err, stdout, stderr) {
-
-  });
-  exec('mongod --dbpath ./mongodb', function (err, stdout, stderr) {
-    stdout.on('data', function (data) {
-        process.stdout.write('slc: ' + data);
-    });
-    stderr.on('data', function (data) {
-      process.stdout.write('slc: ' + data);
-    });
-    cb(err);
-  });
-  exec('slc run', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-  });
+  new run.Command('export NODE_ENV=local').exec().pipe(process.stdout);
+  new run.Command('mongod --dbpath ./mongodb').exec().pipe(process.stdout);
+  new run.Command('slc run').exec().pipe(process.stdout);
 });
 
 gulp.task('serveprod', function (cb) {
-  exec('export NODE_ENV=production', function (err, stdout, stderr) {
-
-  });
-  exec('slc run', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-  });
+  new run.Command('export NODE_ENV=production').exec().pipe(process.stdout);
+  new run.Command('slc run').exec().pipe(process.stdout);
 });
 
 gulp.task('configProduction', function (cb) {
