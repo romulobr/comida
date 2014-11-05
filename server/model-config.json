@@ -35,5 +35,9 @@
   "orderItem": {
     "dataSource": "db",
     "public": true
+  },
+  "feedback": {
+    "dataSource": "db",
+    "public": true
   }
 }

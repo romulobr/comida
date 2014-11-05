@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('comida', ['ngRoute', 'ngAnimate', 'ngMaterial', 'lbServices', 'restaurants', 'orders']);
+    var app = angular.module('comida', ['ngRoute', 'ngAnimate', 'ngMaterial', 'lbServices', 'restaurants', 'orders', 'feedback']);
     var views = {
         restaurants: '/js/restaurants/restaurants.html',
         restaurant: '/js/restaurants/restaurant.html',
@@ -9,7 +9,8 @@
         order: '/js/orders/order.html',
         orderItem: '/js/orders/orderItem.html',
         editOrder: '/js/orders/editOrder.html',
-        newOrder: '/js/orders/newOrder.html'
+        newOrder: '/js/orders/newOrder.html',
+        sendFeedback: '/js/feedback/sendFeedback.html'
     };
 
     app.config(['$routeProvider',
@@ -50,6 +51,9 @@
                 }).
                 when('/restaurant/', {
                     templateUrl: views.restaurant
+                }).
+                when('/feedback/', {
+                    templateUrl: views.sendFeedback
                 }).
                 otherwise({
                     redirectTo: '/orders'

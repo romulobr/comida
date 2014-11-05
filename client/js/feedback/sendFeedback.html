@@ -1,0 +1,21 @@
+<div ng-controller="SendFeedbackController">
+    <md-card>
+        <h1>Your opinion is very important to us!</h1>
+        <p>Please tell us what you think about this application so we can continue to make it better.</p>
+        <p>Here are some suggestions about things you could say:</p>
+
+        <ul>
+            <li>User experience Suggestions</li>
+            <li>Recommendations about how to do technical things (remember this is <a href="https://github.com/romulobr/comida"> <strong>open source</strong> </a>a after all)</li>
+            <li>Just tell us what you like in it!</li>
+            <li>Just tell us what you hate on it! (extra points if you can also say why)</li>
+        </ul>
+        <label for="contact-name">Your name (if you want to say it)</label>
+        <input ng-model="contact.name" style="width:90%;font-size:16pt;border-style:solid;border-width: 2px;padding:10px;margin:10px" id="contact-name" type="text">
+        <label ng-model="contact.email" for="contact-email">Email, Twitter account or some other way for us to contact you back (if you want that)</label>
+        <input style="width:90%;font-size:16pt;border-style:solid;border-width: 2px;padding:10px;margin:10px" id="contact-email" type="text">
+        <label for="message">Feedback Message (the important part)</label>
+        <textarea ng-model="contact.message" id="message" style="width:90%;font-size:16pt;height:300px;border-style:solid;border-width: 2px;padding:10px;margin:10px"></textarea>
+    </md-card>
+    <material-button class="material-theme-light" ng-click="send()">Send Feedback</material-button>
+</div>

@@ -1,0 +1,20 @@
+{
+  "name": "feedback",
+  "plural": "feedbacks",
+  "properties": {
+    "contactName": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
