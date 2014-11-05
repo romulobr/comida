@@ -19,6 +19,10 @@ gulp.task('serveprod', function (cb) {
   new run.Command('slc run').exec().pipe(process.stdout);
 });
 
+gulp.task('generateservice', function (cb) {
+    new run.Command('lb-ng ./server/server.js client/js/lib/loopback/lb-services.js').exec().pipe(process.stdout);
+});
+
 gulp.task('configProduction', function (cb) {
   var productionDatabaseConfiguration = {
     db:{
