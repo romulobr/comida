@@ -1,31 +1,42 @@
-#Comida - App to order food for a bunch of people inside offices
+# Comida - App to order food for a bunch of people inside offices
 
-###Backend: Express - [Strong Loop](http://strongloop.com/) - MongoDb
-###Frontend: Angular - Angular Material Design
+### Backend: Express - [Strong Loop](http://strongloop.com/) - MongoDb
+### Frontend: Angular - Angular Material Design
 
-##project set-up:
-You'll need both gulp and strongloop CLI installed
-```
-npm install -g strongloop gulp
-```
+## Project set-up:
 
-in ./
-```
-npm install
-```
+Before installing, make sure you have recent versions of
+[Git](http://www.git-scm.com/), [Vagrant](https://www.vagrantup.com/)
+and [VirtualBox](https://www.virtualbox.org/) installed on your
+development machine.
 
-in ./client
+Then, simply clone the repository:
+
 ```
-bower install
+git clone git@github.com:romulobr/comida.git
 ```
 
-Make sure mongoDb is installed
-http://www.mongodb.org/
+And create a Vagrant machine from the root of the project:
 
-##running the app:
-[Gulp](https://www.npmjs.org/package/gulp-install) will make your life easier
 ```
-gulp serve
+cd comida
+vagrant up
 ```
 
-##Have fun!
+This will download and install all the required dependencies, and
+set up the database for you. To make sure everything worked well,
+try running the application:
+
+```
+vagrant ssh -c 'cd /vagrant && ./gulp serve'
+```
+
+# Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+This project rocks and uses the MIT LICENSE.

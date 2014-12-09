@@ -43,3 +43,4 @@ tmp
 server/datasources.production.json
 server/datasources.local.json
 newrelic.js
+.vagrant
