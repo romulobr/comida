@@ -31,6 +31,11 @@ try running the application:
 vagrant ssh -c 'cd /vagrant && ./gulp serve'
 ```
 
+By default, the application is exposed on port 3001. You should be
+able to visit http://localhost:3001/index and see an empty instance.
+
+The MongoDB instance is also visible to your machine on port 27018.
+
 # Contributing
 
 1. Fork it
