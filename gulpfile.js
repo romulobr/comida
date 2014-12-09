@@ -7,19 +7,12 @@ gulp.task('default', function() {
   // place code for your default task here
 });
 
-gulp.task('serve',  ['startDb'], function (cb) {
-  new run.Command('export NODE_ENV=local').exec().pipe(process.stdout);
-  new run.Command('slc run').exec().pipe(process.stdout);
-});
-
-gulp.task('startDb', function() {
-  run('mkdir -p ./mongodb');
-  new run.Command('mongod --dbpath ./mongodb').exec().pipe(process.stdout);
+gulp.task('serve', function (cb) {
+  new run.Command('NODE_ENV=local slc run').exec().pipe(process.stdout);
 });
 
 gulp.task('serveprod', function (cb) {
-  new run.Command('export NODE_ENV=production').exec().pipe(process.stdout);
-  new run.Command('slc run').exec().pipe(process.stdout);
+  new run.Command('NODE_ENV=production slc run').exec().pipe(process.stdout);
 });
 
 gulp.task('generateservice', function (cb) {
