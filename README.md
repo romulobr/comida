@@ -28,8 +28,13 @@ set up the database for you. To make sure everything worked well,
 try running the application:
 
 ```
-vagrant ssh -c 'cd /vagrant && ./gulp serve'
+./gulp serve
 ```
+
+Remember to use the `./gulp` wrapper script (not a version of Gulp you
+might have globally installed on your system) if you'd like to keep all
+the running code inside the Vagrant machine. This way, you don't have
+to install anything else locally.
 
 # Contributing
 
