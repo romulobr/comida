@@ -1,3 +1,3 @@
-module.exports = function(Feedback) {
+module.exports = function (Feedback) {
 
 };

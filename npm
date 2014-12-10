@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -f '.vagrant/ssh-config' ]; then
+  echo "Caching Vagrant SSH options in .vagrant/ssh-config"
+  vagrant ssh-config > '.vagrant/ssh-config'
+fi
+
+ssh -F '.vagrant/ssh-config' -o LogLevel=quiet -c blowfish -t default -- "cd /vagrant && npm ${*}"

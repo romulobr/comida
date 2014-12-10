@@ -1,104 +1,104 @@
 <div ng-controller="OrdersController">
-    <h1>Open Orders</h1>
-    <material-card>
-        <table>
-            <tr>
-                <td>
-                    <strong>Restaurant</strong>
-                </td>
-                <td>
-                    <strong>Owner</strong>
-                </td>
-                <td>
-                    <strong>Closing Time</strong>
-                </td>
-                <td>
-                    <strong> Delivery Time</strong>
-                </td>
-                <td>
-                    <strong> Action </strong>
-                </td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="order in openOrders | orderBy:'closingTime'">
-                <td>
-                    {{order.restaurant.name}}
-                </td>
-                <td>
-                    {{order.owner}}
-                </td>
-                <td>
-                    {{order.closingTime | date:'MMM d, y h:mma'}}
-                    <br>
-                    <material-linear-progress mode="determinate" ng-value="order.closingProgress"></material-linear-progress>
-                </td>
-                <td>
-                    {{order.estimatedDeliveryTime| date:'MMM d, y h:mma'}}
-                    <br>
-                    <material-linear-progress mode="determinate" ng-value="order.deliveryProgress"></material-linear-progress>
-                </td>
-                <td>
-                    <a href="#order/{{order.id}}">
-                        <material-button class="material-theme-dark" style="height:40px">
-                            <button class="material-button-inner">Show</button>
-                        </material-button>
-                    </a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </material-card>
-        <a href="#/orders/new">
-            <material-button class="material-theme-light" style="width:100%">
-                Open a new Order
-            </material-button>
-        </a>
-    <h1>Closed Orders</h1>
-    <material-card>
-        <table>
-            <tr>
-                <td>
-                    <strong>Restaurant</strong>
-                </td>
-                <td>
-                    <strong>Owner</strong>
-                </td>
-                <td>
-                    <strong>Closing Time</strong>
-                </td>
-                <td>
-                    <strong> Delivery Time</strong>
-                </td>
-                <td>
-                    <strong> Action </strong>
-                </td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="order in closedOrders | orderBy : 'closingTime'">
-                <td>
-                    {{order.restaurant.name}}
-                </td>
-                <td>
-                    {{order.owner}}
-                </td>
-                <td>
-                    {{order.closingTime | date:'MMM d, y h:mma'}}
-                </td>
-                <td>
-                    {{order.estimatedDeliveryTime| date:'MMM d, y h:mma'}}
-                </td>
-                <td>
-                    <a href="#order/{{order.id}}">
-                        <material-button class="material-theme-dark" style="height:40px">
-                            <button class="material-button-inner">Show</button>
-                        </material-button>
-                    </a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+  <h1>Open Orders</h1>
+  <material-card>
+    <table>
+      <tr>
+        <td>
+          <strong>Restaurant</strong>
+        </td>
+        <td>
+          <strong>Owner</strong>
+        </td>
+        <td>
+          <strong>Closing Time</strong>
+        </td>
+        <td>
+          <strong> Delivery Time</strong>
+        </td>
+        <td>
+          <strong> Action </strong>
+        </td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="order in openOrders | orderBy:'closingTime'">
+          <td>
+            {{order.restaurant.name}}
+          </td>
+          <td>
+            {{order.owner}}
+          </td>
+          <td>
+            {{order.closingTime | date:'MMM d, y h:mma'}}
+            <br>
+            <material-linear-progress mode="determinate" ng-value="order.closingProgress"></material-linear-progress>
+          </td>
+          <td>
+            {{order.estimatedDeliveryTime| date:'MMM d, y h:mma'}}
+            <br>
+            <material-linear-progress mode="determinate" ng-value="order.deliveryProgress"></material-linear-progress>
+          </td>
+          <td>
+            <a href="#order/{{order.id}}">
+              <material-button class="material-theme-dark" style="height:40px">
+                <button class="material-button-inner">Show</button>
+              </material-button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </material-card>
+  <a href="#/orders/new">
+    <material-button class="material-theme-light" style="width:100%">
+      Open a new Order
+    </material-button>
+  </a>
+  <h1>Closed Orders</h1>
+  <material-card>
+    <table>
+      <tr>
+        <td>
+          <strong>Restaurant</strong>
+        </td>
+        <td>
+          <strong>Owner</strong>
+        </td>
+        <td>
+          <strong>Closing Time</strong>
+        </td>
+        <td>
+          <strong> Delivery Time</strong>
+        </td>
+        <td>
+          <strong> Action </strong>
+        </td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="order in closedOrders | orderBy : 'closingTime'">
+          <td>
+            {{order.restaurant.name}}
+          </td>
+          <td>
+            {{order.owner}}
+          </td>
+          <td>
+            {{order.closingTime | date:'MMM d, y h:mma'}}
+          </td>
+          <td>
+            {{order.estimatedDeliveryTime| date:'MMM d, y h:mma'}}
+          </td>
+          <td>
+            <a href="#order/{{order.id}}">
+              <material-button class="material-theme-dark" style="height:40px">
+                <button class="material-button-inner">Show</button>
+              </material-button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-    </material-card>
+  </material-card>
 </div>

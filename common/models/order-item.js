@@ -1,3 +1,3 @@
-module.exports = function(OrderItem) {
+module.exports = function (OrderItem) {
 
 };
