@@ -1,31 +1,31 @@
 <div ng-controller="RestaurantsController">
-    <p>
-        <strong>These are the available Restaurants</strong>
-    </p>
-    <material-card>
-        <table class="table">
-            <thead>
-            <tr>
-                <th class="col-xs-4">Restaurant</th>
-                <th class="col-xs-4">Phone Number</th>
-                <th class="col-xs-4">Default Delivery Fee</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="restaurant in restaurants | orderBy:name">
-                <td>
-                    <a class="list-group-item" href="#restaurant/{{restaurant.id}}">{{restaurant.name}}</a>
-                </td>
+  <p>
+    <strong>These are the available Restaurants</strong>
+  </p>
+  <material-card>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-xs-4">Restaurant</th>
+          <th class="col-xs-4">Phone Number</th>
+          <th class="col-xs-4">Default Delivery Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="restaurant in restaurants | orderBy:name">
+          <td>
+            <a class="list-group-item" href="#restaurant/{{restaurant.id}}">{{restaurant.name}}</a>
+          </td>
 
-                <td>{{restaurant.phone}}</td>
-                <td>{{restaurant.defaultDeliveryFee}}</td>
-            </tr>
-            </tbody>
-        </table>
-    </material-card>
-    <a href="#/restaurants/new">
-        <material-button class="material-theme-light" style="width:100%">
-            <button class="material-button-inner">Create a New Restaurant</button>
-        </material-button>
-    </a>
+          <td>{{restaurant.phone}}</td>
+          <td>{{restaurant.defaultDeliveryFee}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </material-card>
+  <a href="#/restaurants/new">
+    <material-button class="material-theme-light" style="width:100%">
+      <button class="material-button-inner">Create a New Restaurant</button>
+    </material-button>
+  </a>
 </div>

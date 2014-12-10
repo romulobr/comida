@@ -1,54 +1,27 @@
 <div ng-controller="OrderItemController">
-    <div bs-panel title="Order Item">
-        <div bs-panel title="Editing {{orderItem.description}}">
-            <input
-                    style="font-size:2em"
-                    bs-form-control
-                    type="text"
-                    ng-model="orderItem.owner"
-                    label="Owner"
-                    label-class="col-xs-3 col-sm-2 col-lg-1"
-                    class="col-xs-9 col-sm-10 col-lg-11"
-                    placeholder="Who"
-                    />
-            <input
-                    style="font-size:2em"
-                    bs-form-control
-                    type="text"
-                    ng-model="orderItem.description"
-                    label="Item"
-                    label-class="col-xs-3 col-sm-2 col-lg-1"
-                    class="col-xs-9 col-sm-10 col-lg-11"
-                    placeholder="What"
-                    />
+  <div bs-panel title="Order Item">
+    <div bs-panel title="Editing {{orderItem.description}}">
+      <input style="font-size:2em" bs-form-control type="text" ng-model="orderItem.owner" label="Owner" label-class="col-xs-3 col-sm-2 col-lg-1" class="col-xs-9 col-sm-10 col-lg-11" placeholder="Who" />
+      <input style="font-size:2em" bs-form-control type="text" ng-model="orderItem.description" label="Item" label-class="col-xs-3 col-sm-2 col-lg-1" class="col-xs-9 col-sm-10 col-lg-11" placeholder="What" />
 
-            <input
-                    style="font-size:2em"
-                    bs-form-control
-                    type="text"
-                    ng-model="orderItem.price"
-                    label="Price"
-                    label-class="col-xs-3 col-sm-2 col-lg-1"
-                    class="col-xs-9 col-sm-10 col-lg-11"
-                    placeholder="How Much"
-                    />
+      <input style="font-size:2em" bs-form-control type="text" ng-model="orderItem.price" label="Price" label-class="col-xs-3 col-sm-2 col-lg-1" class="col-xs-9 col-sm-10 col-lg-11" placeholder="How Much" />
 
-            <div layout="horizontal" layout-padding>
-                <div flex="50">
-                    <a href="#/orders/{{order.id}}/orderItem/">
-                        <material-button class="material-theme-light" style="width:100%">
-                            <button ng-click="save()" class="material-button-inner">Save</button>
-                        </material-button>
-                    </a>
-                </div>
-                <div flex="50">
-                    <a href="#/order/{{orderItem.orderId}}">
-                        <material-button class="material-theme-light" style="width:100%">
-                            <button class="material-button-inner">Cancel</button>
-                        </material-button>
-                    </a>
-                </div>
-            </div>
+      <div layout="horizontal" layout-padding>
+        <div flex="50">
+          <a href="#/orders/{{order.id}}/orderItem/">
+            <material-button class="material-theme-light" style="width:100%">
+              <button ng-click="save()" class="material-button-inner">Save</button>
+            </material-button>
+          </a>
         </div>
+        <div flex="50">
+          <a href="#/order/{{orderItem.orderId}}">
+            <material-button class="material-theme-light" style="width:100%">
+              <button class="material-button-inner">Cancel</button>
+            </material-button>
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
