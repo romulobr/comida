@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "server/server.js",
   "scripts": {
-    "pretest": "./node_modules/jshint/bin/jshint ."
+    "pretest": "./node_modules/jshint/bin/jshint .",
+    "beautify": "git ls-files '**/*.js' | grep -vf .jshintignore | xargs ./node_modules/js-beautify/js/bin/js-beautify.js -s 2 -r -j --good-stuff"
   },
   "engines": {
     "node": "0.10.x"
