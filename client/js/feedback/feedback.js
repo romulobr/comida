@@ -13,7 +13,7 @@ feedback.controller('SendFeedbackController', function ($scope, $http, Feedback,
                 };
             }]
         });
-    }
+    };
 
     $scope.send = function () {
         if($scope.contact.message !== '')
@@ -24,5 +24,5 @@ feedback.controller('SendFeedbackController', function ($scope, $http, Feedback,
                 console.log('error sending feedback:');
                 console.log(error);
             });
-    }
+    };
 });

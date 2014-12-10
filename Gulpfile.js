@@ -29,6 +29,6 @@ gulp.task('configProduction', function (cb) {
   };
   fs.writeFile('./server/datasources.production.json', JSON.stringify(productionDatabaseConfiguration));
 
-  var newRelicConfigFile = "exports.config = {app_name : ['comida-app'],license_key :'" +process.env.NEW_RELIC_LICENSE_KEY+"',logging : { level : 'info' }};"
+  var newRelicConfigFile = "exports.config = {app_name : ['comida-app'],license_key :'" +process.env.NEW_RELIC_LICENSE_KEY+"',logging : { level : 'info' }};";
   fs.writeFile('./newRelic.js', newRelicConfigFile);
 });

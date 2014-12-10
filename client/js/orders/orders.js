@@ -4,7 +4,7 @@ orders.controller('OrdersController', function ($scope, $interval, Order) {
     var isForToday = function (order) {
             var orderDate = new Date(order.date).toString();
             var today = moment().startOf('day').toDate().toString();
-            return orderDate === today
+            return orderDate === today;
         },
         isOpen = function (order) {
             return moment().isBefore(moment(order.closingTime));
@@ -65,7 +65,7 @@ orders.controller('NewOrderController', function ($scope, $window, Order, Restau
             });
             console.log(error);
         });
-    }
+    };
 });
 
 orders.controller('OrderDetailController', function ($scope, $routeParams, $materialDialog, Order, OrderItem) {
