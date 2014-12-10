@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "server/server.js",
   "scripts": {
-    "pretest": "jshint ."
+    "pretest": "./node_modules/jshint/bin/jshint ."
   },
   "engines": {
     "node": "0.10.x"
