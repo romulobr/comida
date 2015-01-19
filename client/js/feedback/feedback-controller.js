@@ -1,4 +1,4 @@
-var feedback = angular.module('feedback', ['ngRoute', 'lbServices', 'ngMaterial']);
+var feedback = angular.module('feedback');
 
 feedback.controller('SendFeedbackController', function ($scope, $http, Feedback, $materialDialog) {
   $scope.contact = {};

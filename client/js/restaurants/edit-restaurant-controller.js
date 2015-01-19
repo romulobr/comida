@@ -1,7 +1,7 @@
 (function () {
-  var restaurants = angular.module('restaurants', ['lbServices']);
+  var restaurants = angular.module('restaurants');
 
-  restaurants.controller('RestaurantsController', function ($scope, Restaurant) {
+  restaurants.controller('RestaurantListController', function ($scope, Restaurant) {
     Restaurant.query(function (restaurants) {
       $scope.restaurants = restaurants;
     });
