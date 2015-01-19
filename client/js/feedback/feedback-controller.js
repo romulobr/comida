@@ -1,6 +1,4 @@
-var feedback = angular.module('feedback');
-
-feedback.controller('SendFeedbackController', function ($scope, $http, Feedback, $materialDialog) {
+angular.module('feedback').controller('SendFeedbackController', function ($scope, $http, Feedback, $materialDialog) {
   $scope.contact = {};
 
   $scope.dialog = function (e, orderItem) {
@@ -11,7 +9,7 @@ feedback.controller('SendFeedbackController', function ($scope, $http, Feedback,
         $scope.close = function () {
           $hideDialog();
         };
-            }]
+      }]
     });
   };
 

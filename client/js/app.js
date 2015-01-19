@@ -7,10 +7,10 @@
   var app = angular.module('comida', ['ngRoute', 'ngAnimate', 'ngMaterial', 'lbServices', 'restaurants', 'orders', 'feedback']);
 
   var views = {
-    restaurants: '/js/restaurants/restaurant-list.html',
-    restaurant: '/js/restaurants/restaurant.html',
-    editRestaurant: '/js/restaurants/edit-restaurant.html',
-    newRestaurant: '/js/restaurants/new-restaurant.html',
+    restaurants: '/js/restaurants/list/restaurant-list.html',
+    restaurant: '/js/restaurants/detail/restaurant-detail.html',
+    editRestaurant: '/js/restaurants/edit/edit-restaurant.html',
+    newRestaurant: '/js/restaurants/edit/new-restaurant.html',
 
     orderList: '/js/orders/list/order-list.html',
     order: '/js/orders/detail/order.html',

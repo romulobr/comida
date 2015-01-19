@@ -1,0 +1,33 @@
+<div ng-controller="RestaurantDetailController" layout="vertical">
+    <h1>{{restaurant.name}}</h1>
+
+    <img ng-src="{{restaurant.image}}" width="100px" height="100px">
+
+    <h2>Phone Number: {{restaurant.phone}}</h2>
+
+    <h2>Default Delivery Fee: {{restaurant.displayableDefaultDeliveryFee| currency : symbol}}</h2>
+    <material-toolbar class="material-theme-dark">
+        <div layout="horizontal" layout-padding>
+            <div flex>
+                <div>
+                    <a href="{{restaurant.menu}}" target="_blank">
+                        <material-button class="material-theme-light" style="width:100%">
+                            <button class="material-button-inner">Menu</button>
+                        </material-button>
+                    </a>
+                </div>
+            </div flex>
+
+            <div flex>
+                <div>
+                    <a href="#restaurant/edit/{{restaurant.id}}">
+                        <material-button class="material-theme-light" style="width:100%">
+                            <button class="material-button-inner">Edit</button>
+                        </material-button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </material-toolbar>
+</div>

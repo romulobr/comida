@@ -1,19 +1,17 @@
-var orders = angular.module('orders');
-
-orders.controller('OrderListController', function ($scope, $interval, Order) {
+angular.module('orders').controller('OrderListController', function ($scope, $interval, Order) {
   var isForToday = function (order) {
-      var orderDate = new Date(order.date).toString();
-      var today = moment().startOf('day').toDate().toString();
-      return orderDate === today;
-    },
-    isOpen = function (order) {
-      return moment().isBefore(moment(order.closingTime));
-    },
-    progress = function (start, end) {
-      var minimumTime = end.diff(start),
-        elapsedTime = end.diff(moment());
-      return ((minimumTime - elapsedTime) / minimumTime * 100);
-    };
+        var orderDate = new Date(order.date).toString();
+        var today = moment().startOf('day').toDate().toString();
+        return orderDate === today;
+      },
+      isOpen = function (order) {
+        return moment().isBefore(moment(order.closingTime));
+      },
+      progress = function (start, end) {
+        var minimumTime = end.diff(start),
+            elapsedTime = end.diff(moment());
+        return ((minimumTime - elapsedTime) / minimumTime * 100);
+      };
 
   $interval(function () {
     _.each($scope.openOrders, function (order) {
