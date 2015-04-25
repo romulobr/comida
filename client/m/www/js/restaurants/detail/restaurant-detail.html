@@ -1,0 +1,22 @@
+<ion-view title="Restaurant">
+    <ion-content>
+        <div class="card restaurant">
+            <h1>{{restaurant.name}}</h1>
+
+            <img ng-src="{{restaurant.image}}">
+
+            <h2>{{restaurant.phone}}</h2>
+
+            <spam class="restaurant-delivery-fee">
+                Default Delivery Fee: {{restaurant.displayableDefaultDeliveryFee}}
+            </spam>
+
+            <spam class="restaurant-menu">
+                Menu:
+                <a href="{{restaurant.menu}}" target="_blank">{{restaurant.menu}}</a>
+
+            </spam>
+        </div>
+        <button class="button button-block" on-tap="edit()" on-click="edit()">Edit</button>
+    </ion-content>
+</ion-view>

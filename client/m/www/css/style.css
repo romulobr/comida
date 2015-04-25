@@ -1,0 +1,78 @@
+.restaurant h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.restaurant img {    
+    text-align: center;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    height: 200px;    
+}
+
+.restaurant h1, .restaurant h2, .restaurant .restaurant-delivery-fee, .restaurant .restaurant-menu {
+    color: #332244;    
+    text-align: center;
+    text-transform: capitalize;
+    display:block;
+}
+
+.restaurant h2 {
+    font-size: 2em;
+}
+
+.restaurant .delivery-fee {    
+    font-size: 1em;    
+}
+
+.restaurant .restaurant-menu a{    
+    text-transform: lowercase;    
+    text-decoration: none;
+    color: #4444aa;
+
+}
+
+.order-item.item-complex .item-content, .item-radio .item-content
+{
+    padding: 15px;
+}
+
+.order-item {            
+    display:block;
+    font-size: 1em;
+    color: #000000;
+    text-decoration: none;
+    text-align: left;
+    text-overflow: elipsis;    
+}
+
+.order-item .restaurant-name{
+    text-overflow: ellipsis;
+    font-size: 1.4em;    
+    display: block;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.order-item p{
+    font-size: 1.0em;
+    text-align: left;
+}
+
+.order-item img {
+    display: inline;
+    width: auto;
+    height: 80px;
+    float: right;
+}
+
+.order-item .time spam {
+    font-size: 0.8em;    
+}
+
+.order-item .time {
+    font-size: 1.0em;
+    float: left;
+    clear: left;
+}

@@ -1,0 +1,87 @@
+<div ng-controller="OrderDetailController">
+  <p>
+    <strong>{{order.owner}}</strong> is ordering from <strong>{{order.restaurant.name}}</strong>
+  </p>
+  <material-card>
+    <div layout="horizontal" layout-padding>
+      <div flex="10">
+        <img ng-src="{{order.restaurant.image}}" width="auto" height="50px">
+      </div>
+      <div flex="15">
+        Order Total:
+        <br>
+        <strong> {{order.total | currency}}</strong>
+      </div>
+      <div flex="15">
+        Number of People:
+        <br>
+        <strong> {{order.orderItems.length}}</strong>
+      </div>
+      <div flex="20">
+        Order Delivery Fee:
+        <br>
+        <strong>{{order.displayableDeliveryFee | currency}}</strong>
+      </div>
+      <div flex="10">
+        Individual Fee:
+        <br>
+        <strong>{{order.displayableIndividualDeliveryFee | currency}}</strong>
+      </div>
+      <div flex="15">
+        Closes on:
+        <br>
+        <strong>{{order.closingTime | date:"MMM d, y h:mma"}}</strong>
+      </div>
+      <div flex="15">
+        Delivers on:
+        <br>
+        <strong>{{order.estimatedDeliveryTime | date:"MMM d, y h:mma"}}</strong>
+      </div>
+    </div>
+  </material-card>
+
+  <material-card>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-xs-3">Owner</th>
+          <th class="col-xs-3">Order</th>
+          <th class="col-xs-2">Price</th>
+          <th class="col-xs-1">Fee</th>
+          <th class="col-xs-1">Total</th>
+          <th class="col-xs-1">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in order.orderItems">
+          <td>{{item.owner}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.price | currency}}</td>
+          <td>{{order.displayableIndividualDeliveryFee | currency}}</td>
+          <td>{{item.price + order.displayableIndividualDeliveryFee | currency}}</td>
+          <td>
+            <material-button class="material-theme-red" style="width:100%" ng-click="dialog($event, item)">
+              <button class="material-button-inner">Delete</button>
+            </material-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </material-card>
+  <div layout="horizontal" layout-padding>
+    <div flex="50">
+      <a href="#/orders/{{order.id}}/orderItem/">
+        <material-button class="material-theme-dark" style="width:100%">
+          <button class="material-button-inner">Add something to this order</button>
+        </material-button>
+      </a>
+    </div>
+    <div flex="50">
+      <a href="{{order.restaurant.menu}}" target="_blank">
+        <material-button class="material-theme-light" style="width:100%">
+          <button class="material-button-inner">Show me the Menu</button>
+        </material-button>
+      </a>
+    </div>
+  </div>
+</div>
